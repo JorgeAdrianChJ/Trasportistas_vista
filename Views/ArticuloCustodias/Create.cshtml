@@ -1,0 +1,71 @@
+﻿@model Trasportistas_vista.Models.ArticuloCustodium
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>ArticuloCustodium</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="TrasportistaCodigo" class="control-label"></label>
+                <select asp-for="TrasportistaCodigo" class="form-control"
+                        class="form-control" asp-items="ViewBag.Trasportistas">
+                    <option>Please select one</option>
+                </select>
+                <span asp-validation-for="TrasportistaCodigo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TrakingId" class="control-label"></label>
+                <input asp-for="TrakingId" class="form-control" />
+                <span asp-validation-for="TrakingId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Descripcion" class="control-label"></label>
+                <input asp-for="Descripcion" class="form-control" />
+                <span asp-validation-for="Descripcion" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Peso" class="control-label"></label>
+                <input asp-for="Peso" class="form-control" />
+                <span asp-validation-for="Peso" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Precio" class="control-label"></label>
+                <input asp-for="Precio" class="form-control" />
+                <span asp-validation-for="Precio" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ClienteCodigo" class="control-label"></label>
+                <select asp-for="ClienteCodigo" class="form-control"
+                        class="form-control" asp-items="ViewBag.Clientes">
+                    <option>Please select one</option>
+                </select>
+                <span asp-validation-for="ClienteCodigo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="FechaIngreso" class="control-label"></label>
+                <input asp-for="FechaIngreso" class="form-control" />
+                <span asp-validation-for="FechaIngreso" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+    }
